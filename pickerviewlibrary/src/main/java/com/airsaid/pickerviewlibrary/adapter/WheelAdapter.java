@@ -1,4 +1,4 @@
-package com.airsaid.android_pickerview_library.adapter;
+package com.airsaid.pickerviewlibrary.adapter;
 
 public interface WheelAdapter<T> {
 	/**
