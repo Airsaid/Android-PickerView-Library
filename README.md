@@ -89,10 +89,10 @@ dependencies {
 ```
 
 
-# Contact Me
-* 博 客 ：http://blog.csdn.net/airsaid
-* QQ 群 ：5707887
+# 联系我
+* 博 客：http://blog.csdn.net/airsaid
+* QQ群：5707887
 
 
-# Thanks
+# 感谢
 * https://github.com/saiwu-bigkoo/Android-PickerView
