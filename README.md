@@ -1,9 +1,20 @@
 # Android-PickerView-Library
-这是一个高仿 IOS 的 PickerView 控件库。代码来自：https://github.com/saiwu-bigkoo/Android-PickerView
+这是一个高仿 IOS PickerView 控件的库。代码来自：https://github.com/saiwu-bigkoo/Android-PickerView
 ，在原有代码基础上进行封装，并提供了一些修改属性方法。后期如有时间，将会对原有代码进行优化。
-# Preview
+
+# 预览
 ![](https://github.com/Airsaid/Android-PickerView-Library/blob/master/gif/pickerview.gif)
-# Use
+
+# 使用
+* 首先需要在 build.gradle 文件中添加依赖：
+```
+dependencies {
+   compile 'com.airsaid.library:pickerviewlibrary:1.0.0'
+}
+```
+
+添加好依赖后，重新同步工程。可根据需求使用如下选择器：
+
 * 城市选择：
 ```
         CityPickerView mCityPickerView = new CityPickerView(this);
@@ -37,7 +48,7 @@
 ```
 * 时间选择：
 ```
- // TimePickerView 同样有上面设置样式的方法
+ //     TimePickerView 同样有上面设置样式的方法
         TimePickerView mTimePickerView = new TimePickerView(this, TimePickerView.Type.YEAR_MONTH_DAY);
         // 设置是否循环
 //        mTimePickerView.setCyclic(true);
@@ -59,7 +70,8 @@
 ```
 * 选项选择：
 ```
- final ArrayList<String> list = new ArrayList<>();
+        OptionsPickerView<String> mOptionsPickerView = new OptionsPickerView<>(this);
+        final ArrayList<String> list = new ArrayList<>();
         list.add("男");
         list.add("女");
         // 设置数据
@@ -76,9 +88,10 @@
         mOptionsPickerView.show();
 ```
 
+
 # Contact Me
-* 博客：http://blog.csdn.net/airsaid
-* QQ群：5707887
+* 博 客 ：http://blog.csdn.net/airsaid
+* QQ 群 ：5707887
 
 
 # Thanks
