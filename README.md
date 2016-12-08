@@ -9,7 +9,7 @@
 * 首先需要在 build.gradle 文件中添加依赖：
 ```
 dependencies {
-   compile 'com.airsaid.library:pickerview:1.0.1'
+   compile 'com.airsaid.library:pickerview:1.0.2'
 }
 ```
 
