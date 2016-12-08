@@ -89,6 +89,8 @@ dependencies {
 ```
 # 更新日志
 * 1.0.1：修复内存泄露问题,修复设置setTime()方法后字体设置无效bug。
+
+
 # 联系我
 * 博 客：http://blog.csdn.net/airsaid
 * QQ群：5707887
