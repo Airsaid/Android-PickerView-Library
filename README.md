@@ -88,6 +88,7 @@ dependencies {
         mOptionsPickerView.show();
 ```
 # 更新日志
+* 1.0.2：修复部分城市文字乱码bug,修复设置字体过小后分割线无法对齐bug。
 * 1.0.1：修复内存泄露问题,修复设置setTime()方法后字体设置无效bug。
 
 
