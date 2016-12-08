@@ -19,7 +19,6 @@ public class WheelOptions<T> {
 	private ArrayList<ArrayList<T>> mOptions2Items;
 	private ArrayList<ArrayList<ArrayList<T>>> mOptions3Items;
 
-	private float textSize = 22;
     private boolean linkage = false;
     private OnItemSelectedListener wheelListener_option1;
     private OnItemSelectedListener wheelListener_option2;
@@ -75,7 +74,6 @@ public class WheelOptions<T> {
 			wv_option3.setAdapter(new ArrayWheelAdapter(mOptions3Items.get(0)
 					.get(0)));// 设置显示数据
 		wv_option3.setCurrentItem(wv_option3.getCurrentItem());// 初始化时显示的数据
-		setTextSize();
 		if (this.mOptions2Items == null)
 			wv_option2.setVisibility(View.GONE);
 		if (this.mOptions3Items == null)
@@ -218,16 +216,12 @@ public class WheelOptions<T> {
 	 * 设置滚动文字大小
      */
 	public void setTextSize(float size){
-		this.textSize = size;
-		setTextSize();
+		if(wv_option1 != null)
+			wv_option1.setTextSize(size);
+		if(wv_option2 != null)
+			wv_option2.setTextSize(size);
+		if(wv_option3 != null)
+			wv_option3.setTextSize(size);
 	}
 
-	private void setTextSize(){
-		if(wv_option1 != null)
-			wv_option1.setTextSize(textSize);
-		if(wv_option2 != null)
-			wv_option2.setTextSize(textSize);
-		if(wv_option3 != null)
-			wv_option3.setTextSize(textSize);
-	}
 }

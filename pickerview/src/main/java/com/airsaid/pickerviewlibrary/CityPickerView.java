@@ -1,6 +1,7 @@
 package com.airsaid.pickerviewlibrary;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,17 +60,15 @@ public class CityPickerView extends OptionsPickerView {
 
     /** 从assert文件夹中读取省市区的json文件，然后转化为json对象 */
     private void initJsonData() {
+        AssetManager assets = mContext.getAssets();
         try {
-            StringBuilder sb = new StringBuilder();
-            InputStream is = mContext.getAssets().open("city.json");
-            int len = -1;
-            byte[] buf = new byte[1024];
-            while ((len = is.read(buf)) != -1) {
-                sb.append(new String(buf, 0, len, "UTF-8"));
-            }
+            InputStream is = assets.open("city.json");
+            byte[] buf = new byte[is.available()];
+            is.read(buf);
+            String json = new String(buf, "UTF-8");
+            mJsonObj = new JSONObject(json);
             is.close();
-            mJsonObj = new JSONObject(sb.toString());
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

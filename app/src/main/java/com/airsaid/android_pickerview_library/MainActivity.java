@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        mCityPickerView = new CityPickerView(this);
+        mTimePickerView = new TimePickerView(this, TimePickerView.Type.YEAR_MONTH_DAY);
         mOptionsPickerView = new OptionsPickerView<>(this);
     }
 
     public void selectCity(View v){
-        CityPickerView mCityPickerView = new CityPickerView(this);
         // 设置点击外部是否消失
 //        mCityPickerView.setCancelable(true);
         // 设置滚轮字体大小
@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectTime(View v){
         // TimePickerView 同样有上面设置样式的方法
-        TimePickerView mTimePickerView = new TimePickerView(this, TimePickerView.Type.YEAR_MONTH_DAY);
         // 设置是否循环
 //        mTimePickerView.setCyclic(true);
         // 设置滚轮文字大小
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void selectOption(View v){
-        OptionsPickerView<String> mOptionsPickerView = new OptionsPickerView<>(this);
+        mOptionsPickerView = new OptionsPickerView<>(this);
         final ArrayList<String> list = new ArrayList<>();
         list.add("男");
         list.add("女");
@@ -112,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
             if(mCityPickerView.isShowing()){
                 mCityPickerView.dismiss();
+                return true;
+            }
+
+            if(mOptionsPickerView.isShowing()){
+                mOptionsPickerView.dismiss();
                 return true;
             }
         }
