@@ -38,11 +38,18 @@ dependencies {
 //        mCityPickerView.setSubmitTextSize(14f);
         // 设置头部背景
 //        mCityPickerView.setHeadBackgroundColor(Color.RED);
-        mCityPickerView.setOnCitySelectListener(new CityPickerView.OnCitySelectListener() {
-            @Override
-            public void onCitySelect(String str) {
-                Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
-            }
+        mCityPickerView.setOnCitySelectListener(new OnSimpleCitySelectListener(){
+                    @Override
+                    public void onCitySelect(String prov, String city, String area) {
+                        // 省、市、区 分开获取
+                        Log.e(TAG, "省: " + prov + " 市: " + city + " 区: " + area);
+                    }
+
+                    @Override
+                    public void onCitySelect(String str) {
+                        // 一起获取
+                        Toast.makeText(MainActivity.this, "选择了：" + str, Toast.LENGTH_SHORT).show();
+                    }
         });
         mCityPickerView.show();
 ```

@@ -3,6 +3,8 @@ package com.airsaid.pickerviewlibrary;
 import android.content.Context;
 import android.content.res.AssetManager;
 
+import com.airsaid.pickerviewlibrary.listener.OnCitySelectListener;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,9 +50,11 @@ public class CityPickerView extends OptionsPickerView {
                     if(mListCity.size() > option1 && mListCity.get(option1).size() > option2){
                         if(mListArea.size() > option1 && mListArea.get(option1).size() > option2
                                 && mListArea.get(option1).get(option2).size() > option3){
-                            String str = mListProvince.get(option1).concat(mListCity.get(option1)
-                                    .get(option2)).concat(mListArea.get(option1).get(option2).get(option3));
-                            mOnCitySelectListener.onCitySelect(str);
+                            String prov = mListProvince.get(option1);
+                            String city = mListCity.get(option1).get(option2);
+                            String area = mListArea.get(option1).get(option2).get(option3);
+                            mOnCitySelectListener.onCitySelect(prov.concat(city).concat(area));
+                            mOnCitySelectListener.onCitySelect(prov, city, area);
                         }
                     }
                 }
@@ -107,10 +111,6 @@ public class CityPickerView extends OptionsPickerView {
     }
 
     public OnCitySelectListener mOnCitySelectListener;
-
-    public interface OnCitySelectListener {
-        void onCitySelect(String str);
-    }
 
     public void setOnCitySelectListener(OnCitySelectListener listener) {
         this.mOnCitySelectListener = listener;

@@ -2,6 +2,7 @@ package com.airsaid.android_pickerview_library;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import com.airsaid.pickerviewlibrary.CityPickerView;
 import com.airsaid.pickerviewlibrary.OptionsPickerView;
 import com.airsaid.pickerviewlibrary.TimePickerView;
+import com.airsaid.pickerviewlibrary.listener.OnSimpleCitySelectListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = "MainActivity";
 
     private TimePickerView mTimePickerView;
     private CityPickerView mCityPickerView;
@@ -52,10 +56,17 @@ public class MainActivity extends AppCompatActivity {
 //        mCityPickerView.setSubmitTextSize(14f);
         // 设置头部背景
 //        mCityPickerView.setHeadBackgroundColor(Color.RED);
-        mCityPickerView.setOnCitySelectListener(new CityPickerView.OnCitySelectListener() {
+        mCityPickerView.setOnCitySelectListener(new OnSimpleCitySelectListener(){
+            @Override
+            public void onCitySelect(String prov, String city, String area) {
+                // 省、市、区 分开获取
+                Log.e(TAG, "省: " + prov + " 市: " + city + " 区: " + area);
+            }
+
             @Override
             public void onCitySelect(String str) {
-                Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
+                // 一起获取
+                Toast.makeText(MainActivity.this, "选择了：" + str, Toast.LENGTH_SHORT).show();
             }
         });
         mCityPickerView.show();
