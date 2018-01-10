@@ -3,6 +3,8 @@
 
 原库已经有人接手更新，并且代码已经整体重构，非常棒。推荐大家使用，地址：https://github.com/saiwu-bigkoo/Android-PickerView
 
+**该库暂时停止维护，后续可能会进行重构（重构前建议大家不要使用）**
+
 # 预览
 ![](https://github.com/Airsaid/Android-PickerView-Library/blob/master/gif/pickerview.gif)
 
