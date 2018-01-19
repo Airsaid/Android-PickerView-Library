@@ -1,7 +1,7 @@
 # Android-PickerView-Library
 ~~这是一个高仿 IOS PickerView 控件的库：https://github.com/Airsaid/Android-PickerView-Library。在 https://github.com/saiwu-bigkoo/Android-PickerView 代码基础上进行封装、优化。由于原库作者不再维护，所以新开了该库。后期如有时间，将会对整体代码重构，核心采用自定义 LayouManager 实现。~~
 
-原库已经有人接手更新，并且代码已经整体重构，非常棒。推荐大家使用，地址：https://github.com/saiwu-bigkoo/Android-PickerView
+原库已经有人接手更新，并且代码已经重构。推荐大家使用，地址：https://github.com/saiwu-bigkoo/Android-PickerView
 
 **该库暂时停止维护，后续可能会进行重构（重构前建议大家不要使用）**
 
